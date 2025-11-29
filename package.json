@@ -1,0 +1,23 @@
+{
+  "name": "cordgame",
+  "version": "1.0.0",
+  "description": "",
+  "license": "ISC",
+  "author": "",
+  "type": "commonjs",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "cordova:copy": "powershell -NoProfile -Command \"Remove-Item -Recurse -Force 'hello\\\\www\\\\*' ; Copy-Item -Path 'dist\\\\*' -Destination 'hello\\\\www' -Recurse\"",
+    "cordova:build": "npm run build && npm run cordova:copy"
+  },
+  "dependencies": {
+    "phaser": "^3.90.0"
+  },
+  "devDependencies": {
+    "vite": "^6.4.1"
+  }
+}
