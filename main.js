@@ -1,6 +1,5 @@
 import Phaser from 'phaser'
-
-//Second Pre Game Experiment Scene: INFO with AI ----------------------------------------------------------------------
+//Starting Screen & Cover
 class SecondPreGameScene extends Phaser.Scene {
   constructor() {
     super("scene-second");
@@ -30,7 +29,7 @@ class SecondPreGameScene extends Phaser.Scene {
   
     // Text on top of button
     this.startButton = this.add.text(this.buttonX, this.buttonY, "Start Simulation", {
-      fontFamily: 'Megrim', // exact font name
+      fontFamily: 'Megrim', // font name (important)
       fontSize: "48px",
       strokeThickness: 0,
       padding: { x: 20, y: 10 }
@@ -75,7 +74,7 @@ class SecondPreGameScene extends Phaser.Scene {
     this.startButton.setScale(0.97);
   }
 }  
-// Game Scene: GAME --------------------------------------------------------------------------------------
+// Simulator Screen
 class SecondGameScene extends Phaser.Scene {
   constructor() {
     super("scene-second-game")
@@ -384,7 +383,7 @@ function tryBuyCake(dial) {
     scoreText.setVisible(true);
     scoreText.setText("X");
 
-    // OPTIONAL: reset after 1 second
+    // reset after 1 second
     this.time.delayedCall(1000, () => {
       scoreText.setText(score.toFixed(2));
     });
@@ -449,7 +448,7 @@ const config = {
     }
   },
   scene:[
-    SecondPreGameScene, SecondGameScene] //add retry Scene with score after SecondGameScene (Back to SecondPreGameScene)
+    SecondPreGameScene, SecondGameScene] 
 };
 
 console.log("Game config created with scenes:", config.scene.map(s => s.name || s.constructor.name));
